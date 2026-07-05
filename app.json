@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "packaging_app_packer_app",
+    "name": "Awadh Crafts",
     "slug": "packaging_app_packer_app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -20,6 +20,16 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to select packing verification images.",
+          "cameraPermission": "The app accesses your camera to take open-box packing verification photos."
+        }
+      ],
+      "expo-font"
+    ]
   }
 }
