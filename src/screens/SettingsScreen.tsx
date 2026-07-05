@@ -54,14 +54,15 @@ export const SettingsScreen = () => {
           />
           <Divider />
           <List.Item
-            title="API Server URL"
+            title="Active Backend Endpoint"
             description={apiUrl}
+            descriptionNumberOfLines={2}
             left={(props) => <List.Icon {...props} icon="server" />}
           />
           <Divider />
           <List.Item
-            title="Sanctum Token Status"
-            description="Active & Session Cached"
+            title="Authentication State"
+            description="Session Synced & Cached"
             left={(props) => <List.Icon {...props} icon="shield-check" />}
           />
         </List.Section>
@@ -136,67 +137,6 @@ const styles = StyleSheet.create({
     elevation: 2,
     borderRadius: 8,
     marginBottom: 16,
-  },
-  cardTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#37474F',
-  },
-  cardSubtitle: {
-    fontSize: 13,
-    color: '#78909C',
-    marginTop: 4,
-    marginBottom: 16,
-  },
-  input: {
-    backgroundColor: '#FFFFFF',
-    marginBottom: 8,
-  },
-  connectionDiagnosticRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginVertical: 8,
-  },
-  diagnosticLabel: {
-    fontSize: 13,
-    color: '#546E7A',
-  },
-  statusText: {
-    fontSize: 13,
-    fontWeight: 'bold',
-  },
-  statusSuccess: {
-    color: '#388E3C',
-  },
-  statusFailed: {
-    color: '#D32F2F',
-  },
-  statusIdle: {
-    color: '#78909C',
-  },
-  buttonRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginTop: 12,
-  },
-  actionBtn: {
-    flex: 1,
-    marginHorizontal: 4,
-  },
-  saveBtn: {
-    backgroundColor: '#3F51B5',
-  },
-  btnLabel: {
-    fontWeight: 'bold',
-    fontSize: 13,
-  },
-  resetBtn: {
-    marginTop: 12,
-  },
-  resetBtnLabel: {
-    fontSize: 12,
-    color: '#546E7A',
   },
   logoutBtn: {
     backgroundColor: '#C62828',

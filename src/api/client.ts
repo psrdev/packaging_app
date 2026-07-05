@@ -1,7 +1,9 @@
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export const API_URL = 'http://192.168.29.207:8000/api';
+// API Environment Settings - Uncomment/Comment to switch:
+// export const API_URL = 'http://192.168.29.207:8000/api'; // Local Testing
+export const API_URL = 'https://pack.awadhcrafts.com/api'; // Live Production
 
 const client = axios.create({
   baseURL: API_URL,

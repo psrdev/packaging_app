@@ -1,4 +1,4 @@
-import { API_URL } from '../api/client';
+import client from '../api/client';
 
 /**
  * Resolves a relative or absolute image path from the Laravel backend into a fully qualified URL
@@ -10,7 +10,7 @@ export const resolveImageUrl = (path: string | null, apiUrl?: string | null): st
     return path;
   }
   
-  const apiBase = apiUrl || API_URL;
+  const apiBase = apiUrl || client.defaults.baseURL || 'https://pack.awadhcrafts.com/api';
   // Strip trailing '/api' or '/api/'
   const serverBase = apiBase.replace(/\/api\/?$/, '');
   
