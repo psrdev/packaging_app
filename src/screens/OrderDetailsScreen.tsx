@@ -13,6 +13,7 @@ import { PriorityBadge } from '../components/PriorityBadge';
 import * as ImagePicker from 'expo-image-picker';
 import { useAuth } from '../hooks/useAuth';
 import { resolveImageUrl } from '../utils/url';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 type OrderDetailsScreenRouteProp = RouteProp<RootStackParamList, 'OrderDetails'>;
 type OrderDetailsScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'OrderDetails'>;
@@ -24,6 +25,7 @@ interface OrderDetailsScreenProps {
 
 export const OrderDetailsScreen: React.FC<OrderDetailsScreenProps> = ({ route, navigation }) => {
   const { orderId } = route.params;
+  const insets = useSafeAreaInsets();
   const { apiUrl } = useAuth();
   const queryClient = useQueryClient();
   const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
@@ -431,7 +433,7 @@ export const OrderDetailsScreen: React.FC<OrderDetailsScreenProps> = ({ route, n
         )}
         ListHeaderComponent={renderHeader()}
         ListFooterComponent={renderFooter()}
-        contentContainerStyle={styles.scrollList}
+        contentContainerStyle={[styles.scrollList, { paddingBottom: insets.bottom + 24 }]}
       />
     </View>
   );

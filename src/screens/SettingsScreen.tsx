@@ -52,14 +52,14 @@ export const SettingsScreen = () => {
             description="1.0.0 (Expo Go SDK 54)"
             left={(props) => <List.Icon {...props} icon="information-outline" />}
           />
-          <Divider />
+          {/* <Divider />
           <List.Item
             title="Active Backend Endpoint"
             description={apiUrl}
             descriptionNumberOfLines={2}
             left={(props) => <List.Icon {...props} icon="server" />}
           />
-          <Divider />
+          <Divider /> */}
           <List.Item
             title="Authentication State"
             description="Session Synced & Cached"

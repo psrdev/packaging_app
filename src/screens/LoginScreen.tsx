@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, KeyboardAvoidingView, Platform, ScrollView } from 'react-native';
-import { Text, TextInput, Button, Card, HelperText, Avatar } from 'react-native-paper';
+import { StyleSheet, View, KeyboardAvoidingView, Platform, ScrollView, Image } from 'react-native';
+import { Text, TextInput, Button, Card, HelperText } from 'react-native-paper';
 import { useForm, Controller } from 'react-hook-form';
 import * as zod from 'zod';
 import { useAuth } from '../hooks/useAuth';
@@ -75,7 +75,11 @@ export const LoginScreen = () => {
     >
       <ScrollView contentContainerStyle={styles.scrollContainer} keyboardShouldPersistTaps="handled">
         <View style={styles.headerSection}>
-          <Avatar.Icon icon="package-variant-closed" size={80} style={styles.logo} />
+          <Image
+            source={require('../../assets/logo.png')}
+            style={styles.logoImage}
+            resizeMode="contain"
+          />
           <Text style={styles.title}>Awadh Crafts</Text>
           <Text style={styles.subtitle}>Warehouse packing verification system</Text>
         </View>
@@ -183,10 +187,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 32,
   },
-  logo: {
+  logoImage: {
+    width: 140,
+    height: 140,
     marginBottom: 16,
-    elevation: 4,
-    backgroundColor: '#3F51B5',
   },
   title: {
     fontSize: 28,
